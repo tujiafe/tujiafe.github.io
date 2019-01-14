@@ -1,9 +1,5 @@
-# HuxBlog Boilerplate
+# EDiaos Blog
+个人博客，写点技术思考
 
-##### This is the boilerplate of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), all documents is over there!
-
-#### [View Boilerplate &rarr;](http://huangxuan.me/huxblog-boilerplate/)
-
-#### [View Live Hux Blog &rarr;](http://huangxuan.me)
-
-## If you like Hux Blog, Please star [huxpro.github.io repo](https://github.com/Huxpro/huxpro.github.io) instead of this! Thank you!
+# 感谢
+博客的模板来自于[Huxpro](https://github.com/Huxpro/huxpro.github.io)，作者提供了相当不错的模板，个人比较喜欢这样的UI风格。
