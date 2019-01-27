@@ -23,7 +23,7 @@ tags:
 
 #### 开始前问题&思考
 
-> 由于CLI3本身不包含SSR功能，所以基于SSR需求做改造情况下会有一些问题需要提前思考并确认后面是否可用。
+由于CLI3本身不包含SSR功能，所以基于SSR需求做改造情况下会有一些问题需要提前思考并确认后面是否可用。
 
 - CLI3的配置更简单，也意味着对比原来增加SSR复杂度更高，需要深入了解CLI3的内置配置进行改造
 - CLI3的底层封装了 DEV-SERVER，意味着没法抽取出来改造成SSR，需要自行添加SSR使用的DEV/PROD 使用的SERVER
@@ -34,8 +34,8 @@ tags:
 
 #### 初步构建
 
-开始第一步是找现有的解决方案，根据掘金上的两篇篇文章 [通过vue-cli3构建一个SSR应用程序](https://juejin.im/post/5b98e5875188255c8320f88a) 和 [基于vue-cli3 SSR 程序实现热更新功能](https://juejin.im/post/5bc4321b6fb9a05d1e0e824b) 进行同步执行和修改，文章感觉循序渐进，引导的比较好，基本上基于上两篇文章完成初步构建。
-虽然基于初步构建了，基于这个构建发现还有不少可以进一步优化，这里列举主要剩余处理的问题：
+开始第一步是找现有的解决方案，根据掘金上的两篇篇文章 [通过vue-cli3构建一个SSR应用程序](https://juejin.im/post/5b98e5875188255c8320f88a) 和 [基于vue-cli3 SSR 程序实现热更新功能](https://juejin.im/post/5bc4321b6fb9a05d1e0e824b) 进行同步执行和修改，文章感觉循序渐进，引导的比较好，基本上基于上两篇文章完成初步构建，作者是一个刚毕业一年学生，表述上相当不错。
+虽然基于文章初步构建了项目，但是距离工程化还有一些距离，罗列部分需要处理的列表：
 
 - 无Proxy处理
 - 通过修改baseUrl，修改 服务端渲染页面的前端静态资源地址，不够优雅，并且可能导致前端渲染刷新页面导致404无法访问
@@ -45,10 +45,20 @@ tags:
 - PM2支持
 - DIST处理
 
+#### ENV Config 构建
+背景：CLI3默认读取 --mode NODE_ENV作为环境变量，提供了.ENV文件作为匹配环境。使用中发现CLI3内置一些处理以及写死处理`NODE_ENV= production || development`，如果我们增加了一种环境，比如test环境，用于测试环境部署，有测试环境的配置等等，测试环境部署的时候却要依赖production来构建。
+`会导致本地开发/服务端部署 与 实际的多套环境冲突`，这样的场景并不利于开发梳理逻辑。另外基于.ENV环境获取ENV的时候被强制以VUE_APP作为开头的变量名不是很友好，使用起来稍显别扭。
 
-#### 源码
+解决方案：基于`cross-env`提供设置脚本环境变量，增加`NODE_DEPLOY`作为环境变量，工程根据这个环境变量提取配置的config文件中的env配置。这样好处就是把本地开发和部署 以及 与实际部署环境拆分开来不再互相干扰。实现方案如下：
+1. `npm install cross-env -D`
+2. 修改package.json中的脚本，根据项目实际环境设置`NODE_DEPLOY`，比如：`cross-env NODE_DEPLOY=test npm run dev`
+3. 增加config文件夹，并增加 index.js 以及 env
+代码&目录参考如下，基于`NODE_DEPLOY`获取到环境变量，config/index.js根据环境变量获取env配置文件，默认合并env.js，这与cli3提供env基本一致，但不受限于命名。
+![java-javascript](/img/vue-cli3-ssr-project/env_config.jpg)
 
-项目源码：[vue-cli3-ssr-project](https://github.com/EDiaos/vue-cli3-ssr-project) , 欢迎 Start 和 提 Issues
+#### 项目源码
+
+项目源码：[vue-cli3-ssr-project](https://github.com/EDiaos/vue-cli3-ssr-project) , 欢迎 STAR 和 提 ISSUES .
 
 
 
