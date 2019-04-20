@@ -1,5 +1,3 @@
-# EDiaos Blog
-个人博客，写点技术思考。
+# 途家大前端
+途家大前端是由FE，iOS和Android工程师共同组成的，途家最具想象力、创造力和影响力的大前端团队
 
-# 感谢
-博客的模板来自于[Huxpro](https://github.com/Huxpro/huxpro.github.io)，作者提供了相当不错的模板，个人比较喜欢这样的UI风格。

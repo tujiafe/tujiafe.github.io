@@ -1,9 +1,9 @@
 {
-    "name": "ediaos-blog",
-    "title": "EDiaos Blog",
+    "name": "tujiafe-blog",
+    "title": "Tujia FE Blog",
     "version": "1.0.0",
-    "homepage": "http://ediaos.github.io",
-    "author": "EDiaos",
+    "homepage": "http://tujiafe.github.io",
+    "author": "tujiafe",
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/EDiaos/ediaos.github.io"
+        "url": "https://github.com/tujiafe/tujiafe.github.io"
     },
     "scripts": {
         "dev": "jekyll serve -w",
