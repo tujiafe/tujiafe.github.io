@@ -16,6 +16,7 @@
         "url": "https://github.com/EDiaos/ediaos.github.io"
     },
     "scripts": {
+        "dev": "jekyll serve -w",
         "preview": "cd _site; python -m SimpleHTTPServer 8020",
         "watch": "grunt watch & npm run preview & jekyll serve -w;"
     }
