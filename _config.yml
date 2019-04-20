@@ -1,22 +1,22 @@
 # Site settings
-title: EDiaos Blog
-SEOTitle: EDiaos博客 | EDiaos Blog
+title: 途家大前端 BLOG
+SEOTitle: TUJIA-FE
 header-img: img/home-bg.jpg
-email: ediaos@live.com
-description: "Software Engineer，关注用户体验!"
-keyword: "ediaos"
-url: "http://www.ediaos.com"              # your host, for absolute URL
+email: tujiafe@tujia.com
+description: "途家大前端是由FE，iOS和Android工程师共同组成的，途家最具想象力、创造力和影响力的大前端团队!"
+keyword: "tujia"
+url: "http://www.tujia.com"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-weibo_username:     ediaos
-zhihu_username:     ediaos
-github_username:    ediaos
-twitter_username:  ediaos
-#facebook_username:  ediaos
+weibo_username:     bjtujia
+#zhihu_username:     tujia
+github_username:    tujiafe
+#twitter_username:  tujia
+#facebook_username:  tujia
 
 
 
@@ -68,8 +68,8 @@ kramdown:
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "途家网，提供国内外特色民宿、短租房、短租公寓、日租房、家庭旅馆等在线预订。更优惠的价格，更贴心的服务，全球公寓民宿住宿预定尽在途家网！途家，旅途中的家。"
+sidebar-avatar: //tvax1.sinaimg.cn/crop.0.0.800.800.180/897d46a9ly1fv94w4r12sj20m80m8t9i.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -82,19 +82,13 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
+        title: "途家网",
+        href: "http://www.tujia.com"
     },{
-        title: "Foo",
-        href: "#"
+        title: "途家UED",
+        href: "https://www.zcool.com.cn/u/17720211"
     },{
-        title: "Bar",
-        href: "#"
-    },{
-        title: "Example Friends",
-        href: "#"
-    },{
-        title: "It helps SEO",
-        href: "#"
+        title: "途家招聘",
+        href: "http://goto.tujia.com/"
     }
 ]
